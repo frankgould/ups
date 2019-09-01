@@ -72,3 +72,11 @@ sudo systemctl enable ups-start
 sudo systemctl start ups-start
 ```
 You should now be able to remove power from the Raspberry Pi and the battery power will last as long as the battery has capacity. With this UPS HAT, there is no way to determine battery capacity. 
+
+### Enabling the Real Time Clock
+To enable the real time clock (RTC) for both OS versions, add the following lines to the `/boot/config.txt` file:
+```
+dtoverlay=i2c-rtc,ds3231
+dtparam=i2c_arm=on 
+```
+After rebooting, typing the command `date` in a terminal window should return the RTC value.
