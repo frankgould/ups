@@ -79,4 +79,8 @@ To enable the real time clock (RTC) for both OS versions, add the following line
 dtoverlay=i2c-rtc,ds3231
 dtparam=i2c_arm=on 
 ```
+In a terminal window, input the following:
+```
+sudo modprobe i2c-dev
+```
 After rebooting, typing the command `date` in a terminal window should return the RTC value.
